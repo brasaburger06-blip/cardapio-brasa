@@ -654,7 +654,7 @@ export const dataBase = [
     "variations": [
       {
         "category": "BEBIDAS",
-        "price": "3,99",
+        "price": "4,99",
         "description": "500 mL",
         "status": true
       }
