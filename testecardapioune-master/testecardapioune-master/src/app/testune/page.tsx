@@ -173,15 +173,7 @@ export default function MenuMain() {
           >
             {/* CONTEÚDO COM SCROLL */}
             <div className="flex-1 overflow-y-auto overscroll-contain pb-4">
-{type === "PIZZAS" && (
-                <div className=" flex gap-2 border-2 border-orange-500 m-1.5 p-1.5 items-center justify-center">
-                                    <div className=" relative w-full h-full ">
-                                        <Image src='/skolbeats.jpeg'
-                                            width={350}
-                                            height={450}
-                                            alt="destaque" />
-                                    </div>
-                            </div>)}
+
               <h2 className="text-center text-4xl font-bold text-orange-900 uppercase tracking-widest mb-4">
                 {type}
               </h2>
@@ -195,22 +187,22 @@ export default function MenuMain() {
                     <div className="relative w-30 h-30 flex-shrink-0 rounded">
                       <Image
                         src="/pizza_calabresa_e_mussarela.jpg"
-                        alt={"pizza_calabresa_e_mussarela"}
+                        alt="Pizza de calabresa e mussarela"
                         fill
                         className="object-cover rounded"
                       />
                     </div>
                     <CardContent className="flex-1 flex flex-col gap-1 p-1">
                       <CardTitle className="text-lg uppercase">
-                        tabela de preco
+                        Tabela de preços
                       </CardTitle>
                       <CardDescription className="text-sm text-gray-500">
-                        PEQUENO 25CM = 44,99<br />
-                        4 pedaços 1 sabor  <br />
-                        MEDIO 30CM = 64,99<br />
-                        8 pedaços 2 sabores<br />
-                        GRANDE 35CM = 79,99<br />
-                        8 pedaços 2 sabores<br />
+                        Pequena — 25 cm — R$ 44,99<br />
+                        4 pedaços • 1 sabor  <br />
+                        Média — 30 cm — R$ 64,99<br />
+                        8 pedaços • até 2 sabores<br />
+                        Grande — 35 cm — R$ 79,99<br />
+                        8 pedaços • até 2 sabores<br />
                       </CardDescription>
                     </CardContent>
                   </Card>              
@@ -218,8 +210,8 @@ export default function MenuMain() {
               )}
              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {productsByType[type].map((product, i) => (
-                  <CardMenu2 key={i} product={product} />
+                {productsByType[type].map((product) => (
+                  <CardMenu2 key={product.id} product={product} />
                 ))}
               </div>
             </div>
@@ -236,3 +228,4 @@ export default function MenuMain() {
     </div>
   );
 }
+
