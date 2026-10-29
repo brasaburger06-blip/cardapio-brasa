@@ -3,17 +3,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { dataBase } from "@/db";
 import { ProductType } from "@/app/types/ProductTypes";
-import Image from "next/image";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardTitle,
-} from "@/components/ui/card";
-import CardMenu from "@/app/components/CardMenu";
 import CardPrice from "@/app/testune/card";
-import { ArrowBigLeft, ArrowBigRight, ArrowLeftIcon, ArrowRight } from "lucide-react";
+import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
 import CardMenu2 from "../components/Cardmenu2";
 
 /* ================================
@@ -44,19 +36,22 @@ export default function MenuMain() {
   const map: Record<string, ProductType[]> = {};
 
   dataBase.forEach((p) => {
-    // verifica se existe ao menos uma variação ativa
-    const hasActiveVariation = p.variations?.some(v => v.status);
+    // O delivery não oferece bebidas alcoólicas nem tereré.
+    if (["DRINKS", "TERERÉ"].includes(p.categoryTitle)) return;
 
-    if (!hasActiveVariation) return;
+    const variations = p.variations?.filter(
+      v => v.status && !["CERVEJAS", "DRINKS PRONTOS"].includes(v.category)
+    );
+    if (!variations?.length) return;
 
     const type = extractProductType(p.categoryTitle);
 
     if (!map[type]) map[type] = [];
-    map[type].push(p);
+    map[type].push({ ...p, variations });
   });
 
   return map;
-}, [dataBase]);
+}, []);
 
 
   /* ================================
@@ -139,6 +134,10 @@ export default function MenuMain() {
   return (
     <div className="h-screen flex width=1200 flex-col bg-gradient-to-b from-orange-50 to-white">
 
+      <header className="bg-white px-4 py-3 text-center border-b">
+        <h1 className="text-xl font-bold text-orange-900">Cardápio Brasa Burguer Delivery</h1>
+      </header>
+
       {/* MENU SUPERIOR */}
       <nav className="sticky top-0 z-50 bg-white border-b shadow-sm p-3 flex gap-2 overflow-x-auto">
         {productTypes.map((type, index) => (
@@ -178,37 +177,13 @@ export default function MenuMain() {
 
               {type === "PIZZAS" && (
                 <div className="mb-4">
-                  <Card
-                    className="flex flex-row items-center gap-4 w-full max-w-md p-2 transition-transform hover:scale-105"
-                  >
-                    <div className="relative w-30 h-30 flex-shrink-0 rounded">
-                      <Image
-                        src="/pizza_calabresa_e_mussarela.jpg"
-                        alt={"pizza_calabresa_e_mussarela"}
-                        fill
-                        className="object-cover rounded"
-                      />
-                    </div>
-                    <CardContent className="flex-1 flex flex-col gap-1 p-1">
-                      <CardTitle className="text-lg uppercase">
-                        tabela de preco
-                      </CardTitle>
-                      <CardDescription className="text-sm text-gray-500">
-                        PEQUENO 25CM = 44,99<br />
-                        4 pedaços 1 sabor  <br />
-                        MEDIO 30CM = 59,99<br />
-                        8 pedaços 2 sabores<br />
-                        GRANDE 35CM = 79,99<br />
-                        8 pedaços 2 sabores<br />
-                      </CardDescription>
-                    </CardContent>
-                  </Card>              
-                    </div>
+                  <CardPrice />
+                </div>
               )}
              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {productsByType[type].map((product, i) => (
-                  <CardMenu2 key={i} product={product} />
+                {productsByType[type].map((product) => (
+                  <CardMenu2 key={product.id} product={product} />
                 ))}
               </div>
             </div>
@@ -225,3 +200,4 @@ export default function MenuMain() {
     </div>
   );
 }
+
