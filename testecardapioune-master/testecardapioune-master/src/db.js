@@ -785,18 +785,6 @@ export const dataBase = [
         "price": "5,99",
         "description": "Sukita — lata",
         "status": true
-      },
-      {
-        "category": "BEBIDAS",
-        "price": "9,99",
-        "description": "Sukita — 2 L",
-        "status": true
-      },
-      {
-        "category": "BEBIDAS",
-        "price": "5,99",
-        "description": "Sprite — lata de 350 mL",
-        "status": true
       }
     ]
   },
