@@ -388,12 +388,14 @@ export const dataBase = [
       {
         "category": "INTEIRA",
         "price": "24,99",
-        "status": true
+        "status": true,
+        "description": "Pele suína."
       },
       {
         "category": "MEIA",
         "price": "18,99",
-        "status": true
+        "status": true,
+        "description": "Pele suína."
       }
     ]
   },
@@ -499,13 +501,13 @@ export const dataBase = [
         "category": "INTEIRA",
         "price": "37,99",
         "status": true,
-        "description": "Tequitos."
+        "description": "Tekitos."
       },
       {
         "category": "MEIA",
         "price": "26,99",
         "status": true,
-        "description": "Tequitos."
+        "description": "Tekitos."
       }
     ]
   },
@@ -613,6 +615,20 @@ export const dataBase = [
       {
         "category": "MEIA",
         "price": "9,99",
+        "status": true
+      }
+    ]
+  },
+  {
+    "id": "porcao-prato-executivo",
+    "name": "PRATO EXECUTIVO",
+    "categoryTitle": "PORÇÕES",
+    "typeMenu": true,
+    "variations": [
+      {
+        "category": "PRATO EXECUTIVO",
+        "price": "29,99",
+        "description": "Arroz, feijão tropeiro, salada de alface e tomate, bife à parmegiana de carne ou frango e batata frita.",
         "status": true
       }
     ]
