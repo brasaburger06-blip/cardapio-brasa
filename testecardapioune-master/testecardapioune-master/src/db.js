@@ -655,21 +655,7 @@ export const dataBase = [
       {
         "category": "BEBIDAS",
         "price": "4,99",
-        "description": "500 mL",
-        "status": true
-      }
-    ]
-  },
-  {
-    "id": "agua-gas",
-    "name": "ÁGUA COM GÁS",
-    "categoryTitle": "BEBIDAS",
-    "typeMenu": true,
-    "variations": [
-      {
-        "category": "BEBIDAS",
-        "price": "4,99",
-        "description": "500 mL",
+        "description": "500 mL — com gás ou sem gás.",
         "status": true
       }
     ]
