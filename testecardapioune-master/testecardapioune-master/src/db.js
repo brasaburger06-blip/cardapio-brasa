@@ -315,7 +315,7 @@ export const dataBase = ([
     variations: [
       {
         category: "LANCHES",
-        price: "59,90",
+        price: "29,99",
         description:
           "Pão Selado, Hambúrguer Artesanal, Mussarela, Ovo, Bacon, Molho Especial, Cebola Caramelizada, Alface e Tomate.",
         status: true
