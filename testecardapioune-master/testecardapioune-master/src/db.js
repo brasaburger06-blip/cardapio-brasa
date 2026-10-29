@@ -705,7 +705,7 @@ export const dataBase = [
       },
       {
         "category": "BEBIDAS",
-        "price": "14,99",
+        "price": "15,99",
         "description": "2 L",
         "status": true
       },
