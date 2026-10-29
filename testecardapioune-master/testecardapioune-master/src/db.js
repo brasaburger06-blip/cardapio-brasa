@@ -634,6 +634,19 @@ export const dataBase = [
     ]
   },
   {
+    "id": "porcao-caldo-carne",
+    "name": "CALDO DE CARNE",
+    "categoryTitle": "PORÇÕES",
+    "typeMenu": true,
+    "variations": [
+      {
+        "category": "CALDO",
+        "price": "25,00",
+        "status": true
+      }
+    ]
+  },
+  {
     "id": "agua-mineral",
     "name": "ÁGUA MINERAL",
     "categoryTitle": "BEBIDAS",
