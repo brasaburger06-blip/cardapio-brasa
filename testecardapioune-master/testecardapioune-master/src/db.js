@@ -669,25 +669,13 @@ export const dataBase = [
       {
         "category": "BEBIDAS",
         "price": "6,99",
-        "description": "KS",
+        "description": "KS — comum ou zero.",
         "status": true
       },
       {
         "category": "BEBIDAS",
         "price": "6,99",
-        "description": "KS ZERO",
-        "status": true
-      },
-      {
-        "category": "BEBIDAS",
-        "price": "6,99",
-        "description": "LATA 350 mL",
-        "status": true
-      },
-      {
-        "category": "BEBIDAS",
-        "price": "6,99",
-        "description": "LATA ZERO 350 mL",
+        "description": "Lata 330 mL — comum ou zero.",
         "status": true
       },
       {
