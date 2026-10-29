@@ -154,15 +154,15 @@ export const dataBase = [
     ]
   },
   {
-    "id": "lanche-brasa-queijo-crocante",
-    "name": "BRASA QUEIJO CROCANTE",
+    "id": "lanche-brasa-costela",
+    "name": "BRASA COSTELA",
     "categoryTitle": "LANCHES",
     "typeMenu": true,
     "variations": [
       {
         "category": "LANCHES",
-        "price": "37,99",
-        "description": "Pão selado, maionese, hambúrguer, queijo empanado crocante, molho especial e cheddar.",
+        "price": "27,99",
+        "description": "Pão selado, hambúrguer artesanal de costela, mussarela, cheddar, molho especial, cebola caramelizada, picles, alface e tomate.",
         "status": true
       }
     ]
@@ -182,20 +182,6 @@ export const dataBase = [
     ]
   },
   {
-    "id": "lanche-brasa-costela",
-    "name": "BRASA COSTELA",
-    "categoryTitle": "LANCHES",
-    "typeMenu": true,
-    "variations": [
-      {
-        "category": "LANCHES",
-        "price": "27,99",
-        "description": "Pão selado, hambúrguer artesanal de costela, mussarela, cheddar, molho especial, cebola caramelizada, picles, alface e tomate.",
-        "status": true
-      }
-    ]
-  },
-  {
     "id": "lanche-brasa-defumado",
     "name": "BRASA DEFUMADO",
     "categoryTitle": "LANCHES",
@@ -205,6 +191,20 @@ export const dataBase = [
         "category": "LANCHES",
         "price": "31,99",
         "description": "Pão selado, hambúrguer artesanal defumado, mussarela, cheddar, bacon, molho especial, cebola caramelizada, picles, alface e tomate.",
+        "status": true
+      }
+    ]
+  },
+  {
+    "id": "lanche-brasa-queijo-crocante",
+    "name": "BRASA QUEIJO CROCANTE",
+    "categoryTitle": "LANCHES",
+    "typeMenu": true,
+    "variations": [
+      {
+        "category": "LANCHES",
+        "price": "37,99",
+        "description": "Pão selado, maionese, hambúrguer, queijo empanado crocante, molho especial e cheddar.",
         "status": true
       }
     ]
@@ -238,20 +238,6 @@ export const dataBase = [
     ]
   },
   {
-    "id": "combo-brasa-burguer",
-    "name": "BRASA BURGUER",
-    "categoryTitle": "COMBOS DE LANCHES",
-    "typeMenu": true,
-    "variations": [
-      {
-        "category": "COMBOS DE LANCHES",
-        "price": "41,99",
-        "description": "Pão selado, hambúrguer artesanal, mussarela, ovo, bacon, molho especial, cebola caramelizada, alface e tomate. Acompanha batata combo e refrigerante em lata.",
-        "status": true
-      }
-    ]
-  },
-  {
     "id": "combo-brasa-costela",
     "name": "BRASA COSTELA",
     "categoryTitle": "COMBOS DE LANCHES",
@@ -261,6 +247,20 @@ export const dataBase = [
         "category": "COMBOS DE LANCHES",
         "price": "39,99",
         "description": "Pão selado, hambúrguer artesanal de costela, mussarela, cheddar, molho especial, cebola caramelizada, picles, alface e tomate. Acompanha batata combo e refrigerante em lata.",
+        "status": true
+      }
+    ]
+  },
+  {
+    "id": "combo-brasa-burguer",
+    "name": "BRASA BURGUER",
+    "categoryTitle": "COMBOS DE LANCHES",
+    "typeMenu": true,
+    "variations": [
+      {
+        "category": "COMBOS DE LANCHES",
+        "price": "41,99",
+        "description": "Pão selado, hambúrguer artesanal, mussarela, ovo, bacon, molho especial, cebola caramelizada, alface e tomate. Acompanha batata combo e refrigerante em lata.",
         "status": true
       }
     ]
@@ -1372,3 +1372,4 @@ export const dataBase = [
     ]
   }
 ];
+
