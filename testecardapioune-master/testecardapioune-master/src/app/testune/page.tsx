@@ -35,6 +35,7 @@ const extractProductType = (category?: string): string => {
 
 export default function MenuMain() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
   const [currentPage, setCurrentPage] = useState(0);
 
 
@@ -87,6 +88,16 @@ export default function MenuMain() {
     return () => observer.disconnect();
   }, [productTypes.length]);
 
+  useEffect(() => {
+    const nav = navRef.current;
+    const activeTab = nav?.querySelector<HTMLButtonElement>(`[data-tab-index="${currentPage}"]`);
+    if (!nav || !activeTab) return;
+    nav.scrollTo({
+      left: activeTab.offsetLeft - (nav.clientWidth - activeTab.offsetWidth) / 2,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    });
+  }, [currentPage]);
+
   const goToSection = (index: number) => {
     scrollRef.current?.querySelector<HTMLElement>(`[data-index="${index}"]`)?.scrollIntoView({
       behavior: "smooth", block: "start",
@@ -124,14 +135,16 @@ export default function MenuMain() {
       </header>
 
       {/* MENU SUPERIOR */}
-      <nav className="sticky top-0 z-50 bg-white border-b shadow-sm p-3 flex gap-2 overflow-x-auto">
+      <nav ref={navRef} className="sticky top-0 z-50 bg-white border-b shadow-sm p-3 flex gap-2 overflow-x-auto">
         {productTypes.map((type, index) => (
           <button
             key={type}
+            data-tab-index={index}
+            aria-current={currentPage === index ? "location" : undefined}
             onClick={() => goToSection(index)}
             className={`px-4 py-2 text-xs font-semibold rounded-full whitespace-nowrap transition
               ${currentPage === index
-                ? "bg-black text-white"
+                ? "bg-black text-white font-bold"
                 : "bg-gray-200 text-gray-700"
               }`}
           >
@@ -210,6 +223,7 @@ export default function MenuMain() {
     </div>
   );
 }
+
 
 
 
