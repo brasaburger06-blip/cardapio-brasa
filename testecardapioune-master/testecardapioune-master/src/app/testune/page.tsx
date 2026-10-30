@@ -178,6 +178,12 @@ export default function MenuMain() {
                 {type}
               </h2>
 
+              {type === "DRINKS" && (
+                <p className="text-center text-orange-900 mb-4">
+                  Todos os nossos drinks podem ser preparados sem álcool. Peça sua versão!
+                </p>
+              )}
+
               {type === "PIZZAS" && (
                 
                 <div className="mb-4">
@@ -228,4 +234,5 @@ export default function MenuMain() {
     </div>
   );
 }
+
 
