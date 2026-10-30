@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import { dataBase } from "@/db";
 import { ProductType } from "@/app/types/ProductTypes";
 
@@ -134,8 +135,27 @@ export default function MenuMain() {
   return (
     <div className="h-screen flex width=1200 flex-col bg-gradient-to-b from-orange-50 to-white">
 
-      <header className="bg-white px-4 py-3 text-center border-b">
-        <h1 className="text-xl font-bold text-orange-900">Cardápio Brasa Burguer Delivery</h1>
+      <header className="shrink-0 border-b bg-white px-4 py-2">
+        <div className="flex items-center justify-center gap-3">
+          <div className="relative h-16 w-32 shrink-0 overflow-hidden rounded-lg bg-black">
+            <Image src="/IMG_6425.PNG" alt="Logo Brasa Burguer" width={1280} height={1254} priority className="absolute left-0 top-1/2 w-full -translate-y-1/2" />
+          </div>
+          <div>
+            <h1 className="text-lg font-bold text-orange-900">Cardápio Brasa Burguer Delivery</h1>
+            <p className="text-xs text-gray-600">Quarta a domingo · 18h às 23h</p>
+          </div>
+        </div>
+        <details className="mx-auto mt-2 max-w-xl text-center text-sm">
+          <summary className="cursor-pointer font-semibold text-orange-900">Informações e contato</summary>
+          <div className="mt-2 space-y-2 rounded-lg bg-orange-50 p-3">
+            <p>Rua Bahia, 2310 — Centro</p>
+            <p>Funcionamento: quarta a domingo, das 18h às 23h.</p>
+            <div className="flex flex-wrap justify-center gap-2">
+              <a href="https://wa.me/5569992479771" target="_blank" rel="noopener noreferrer" className="rounded-full bg-green-700 px-4 py-2 font-semibold text-white">WhatsApp: (69) 99247-9771</a>
+              <a href="https://www.instagram.com/brasaburguer_eoe/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-orange-900 px-4 py-2 font-semibold text-white">Instagram: @brasaburguer_eoe</a>
+            </div>
+          </div>
+        </details>
       </header>
 
       {/* MENU SUPERIOR */}
@@ -200,4 +220,5 @@ export default function MenuMain() {
     </div>
   );
 }
+
 
