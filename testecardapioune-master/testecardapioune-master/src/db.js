@@ -1033,7 +1033,7 @@ export const dataBase = [
     "categoryTitle": "DRINKS",
     "variations": [
       {
-        "category": "DRINKS",
+        "category": "Disponível com ou sem álcool",
         "price": "24,99",
         "description": "Hortelã, rum e limão.",
         "status": true
@@ -1047,7 +1047,7 @@ export const dataBase = [
     "categoryTitle": "DRINKS",
     "variations": [
       {
-        "category": "DRINKS",
+        "category": "Disponível com ou sem álcool",
         "price": "24,99",
         "description": "Coca-Cola, rum e limão.",
         "status": true
@@ -1061,7 +1061,7 @@ export const dataBase = [
     "categoryTitle": "DRINKS",
     "variations": [
       {
-        "category": "DRINKS",
+        "category": "Disponível com ou sem álcool",
         "price": "23,99",
         "description": "Xarope de gengibre, xarope de açúcar, limão e vodka.",
         "status": true
@@ -1075,7 +1075,7 @@ export const dataBase = [
     "categoryTitle": "DRINKS",
     "variations": [
       {
-        "category": "DRINKS",
+        "category": "Disponível com ou sem álcool",
         "price": "27,99",
         "description": "Leite condensado, creme de leite, morango e vodka.",
         "status": true
@@ -1089,7 +1089,7 @@ export const dataBase = [
     "categoryTitle": "DRINKS",
     "variations": [
       {
-        "category": "DRINKS",
+        "category": "Disponível com ou sem álcool",
         "price": "27,99",
         "description": "Leite condensado, creme de leite, abacaxi e vodka.",
         "status": true
@@ -1103,9 +1103,9 @@ export const dataBase = [
     "categoryTitle": "DRINKS",
     "variations": [
       {
-        "category": "DRINKS",
+        "category": "Disponível com ou sem álcool",
         "price": "24,99",
-        "description": "Limão, morango, abacaxi e kiwi.",
+        "description": "Limão, morango e abacaxi.",
         "status": true
       }
     ]
@@ -1117,7 +1117,7 @@ export const dataBase = [
     "categoryTitle": "DRINKS",
     "variations": [
       {
-        "category": "DRINKS",
+        "category": "Disponível com ou sem álcool",
         "price": "9,99",
         "description": "Maracujá, morango, melancia e maçã verde.",
         "status": false
@@ -1131,7 +1131,7 @@ export const dataBase = [
     "categoryTitle": "DRINKS",
     "variations": [
       {
-        "category": "DRINKS",
+        "category": "Disponível com ou sem álcool",
         "price": "34,99",
         "description": "Maracujá, morango, melancia e maçã verde.",
         "status": false
