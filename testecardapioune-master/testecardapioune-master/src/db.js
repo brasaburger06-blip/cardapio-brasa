@@ -1141,7 +1141,7 @@ export const dataBase = [
       {
         "category": "TORRE",
         "price": "29,99",
-        "description": "Opções: H2O, limonada suíça, guaraná e limão, maracujá e limão, limão e hortelã ou abacaxi com hortelã. Ervas: eucalipto, energético, black, pura folha e cereja.",
+        "description": "Opções: H2O, limonada suíça, guaraná e limão, maracujá e limão, limão e hortelã ou abacaxi com hortelã. Ervas: limão rosa, energético, black, pura folha e cereja.",
         "status": true
       }
     ]
@@ -1301,4 +1301,5 @@ export const dataBase = [
     ]
   }
 ];
+
 
