@@ -1140,84 +1140,28 @@ export const dataBase = [
   },
   {
     "id": "1400",
-    "name": "TORRE DE H2O",
+    "name": "TORRES DE TERERÉ",
     "typeMenu": false,
     "categoryTitle": "TERERÉ",
     "variations": [
       {
-        "category": "TERERÉ",
+        "category": "TORRE",
         "price": "29,99",
-        "description": "Ervas de tereré: eucalipto, energético, black, pura folha e cereja.",
+        "description": "Opções: H2O, limonada suíça, guaraná e limão, maracujá e limão, limão e hortelã ou abacaxi com hortelã. Ervas: eucalipto, energético, black, pura folha e cereja.",
         "status": true
       }
     ]
   },
   {
     "id": "1401",
-    "name": "LIMONADA SUÍÇA",
+    "name": "COPO DE TERERÉ",
     "typeMenu": false,
     "categoryTitle": "TERERÉ",
     "variations": [
       {
-        "category": "TERERÉ",
-        "price": "29,99",
-        "description": "Ervas de tereré: eucalipto, energético, black, pura folha e cereja.",
-        "status": true
-      }
-    ]
-  },
-  {
-    "id": "1402",
-    "name": "GUARANÁ E LIMÃO",
-    "typeMenu": false,
-    "categoryTitle": "TERERÉ",
-    "variations": [
-      {
-        "category": "TERERÉ",
-        "price": "29,99",
-        "description": "Ervas de tereré: eucalipto, energético, black, pura folha e cereja.",
-        "status": true
-      }
-    ]
-  },
-  {
-    "id": "1403",
-    "name": "MARACUJÁ E LIMÃO",
-    "typeMenu": false,
-    "categoryTitle": "TERERÉ",
-    "variations": [
-      {
-        "category": "TERERÉ",
-        "price": "29,99",
-        "description": "Ervas de tereré: eucalipto, energético, black, pura folha e cereja.",
-        "status": true
-      }
-    ]
-  },
-  {
-    "id": "1404",
-    "name": "LIMÃO E HORTELÃ",
-    "typeMenu": false,
-    "categoryTitle": "TERERÉ",
-    "variations": [
-      {
-        "category": "TERERÉ",
-        "price": "29,99",
-        "description": "Ervas de tereré: eucalipto, energético, black, pura folha e cereja.",
-        "status": true
-      }
-    ]
-  },
-  {
-    "id": "1405",
-    "name": "ABACAXI COM HORTELÃ",
-    "typeMenu": false,
-    "categoryTitle": "TERERÉ",
-    "variations": [
-      {
-        "category": "TERERÉ",
-        "price": "29,99",
-        "description": "Ervas de tereré: eucalipto, energético, black, pura folha e cereja.",
+        "category": "ADICIONAL POR COPO",
+        "price": "3,00",
+        "description": "A torre não acompanha copo de tereré. Solicite o seu à parte.",
         "status": true
       }
     ]
