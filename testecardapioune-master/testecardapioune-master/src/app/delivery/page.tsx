@@ -114,6 +114,7 @@ export default function MenuMain() {
           <div>
             <h1 className="text-lg font-bold text-orange-900">Cardápio Brasa Burguer Delivery</h1>
             <p className="text-xs text-gray-600">Quarta a domingo · 18h às 23h</p>
+            <p className="mt-1 text-sm font-semibold text-orange-900">🛵 Taxa de entrega: R$ 5,00</p>
           </div>
         </div>
         <details open className="mx-auto mt-2 max-w-xl text-center text-sm">
@@ -186,6 +187,7 @@ export default function MenuMain() {
     </div>
   );
 }
+
 
 
 
