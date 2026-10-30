@@ -686,7 +686,7 @@ export const dataBase = [
       },
       {
         "category": "BEBIDAS",
-        "price": "9,99",
+        "price": "11,99",
         "description": "1 L",
         "status": true
       },
