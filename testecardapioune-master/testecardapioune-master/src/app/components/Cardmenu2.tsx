@@ -56,7 +56,16 @@ export default function CardMenu2({ product }: ProductProps) {
 
                 {variation.description && (
                   <CardDescription className="text-xs text-gray-500">
-                    {variation.description}
+                    {product.id === "1400" && product.categoryTitle === "TERERÉ" ? (
+                      <>
+                        <strong className="block text-base font-bold text-gray-800 mb-2">
+                          {variation.description.split(" Ervas:")[0]}
+                        </strong>
+                        {variation.description.includes(" Ervas:") && (
+                          <span>Ervas:{variation.description.split(" Ervas:")[1]}</span>
+                        )}
+                      </>
+                    ) : variation.description}
                   </CardDescription>
                 )}
               </div>
@@ -66,3 +75,4 @@ export default function CardMenu2({ product }: ProductProps) {
     </Card>
   );
 }
+
