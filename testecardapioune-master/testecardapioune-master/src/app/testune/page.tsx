@@ -36,7 +36,7 @@ const extractProductType = (category?: string): string => {
 export default function MenuMain() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const [touchStartX, setTouchStartX] = useState(0);
+
 
   /* ================================
      AGRUPA PRODUTOS POR TIPO
@@ -75,70 +75,30 @@ export default function MenuMain() {
       .map((i) => i.type);
   }, [productsByType]);
 
-  /* ================================
-     SCROLL HORIZONTAL AO TROCAR PÁGINA
-  ================================ */
   useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    const section = container.querySelector(
-      `[data-index="${currentPage}"]`
-    ) as HTMLElement;
-
-    section?.scrollIntoView({
-      behavior: "smooth",
-      inline: "start",
-    });
-  }, [currentPage]);
-
-  /* ================================
-     SWIPE MOBILE
-  ================================ */
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
-  const onTouchEnd = (e: React.TouchEvent) => {
-    const endX = e.changedTouches[0].clientX;
-    const distance = touchStartX - endX;
-
-    if (distance > 60) {
-      setCurrentPage((p) => Math.min(productTypes.length - 1, p + 1));
-    }
-
-    if (distance < -60) {
-      setCurrentPage((p) => Math.max(0, p - 1));
-    }
-  };
-
-  /* ================================
-     WHEEL (DESKTOP)
-  ================================ */
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    const onWheel = (e: WheelEvent) => {
-      if (Math.abs(e.deltaY) < 30) return;
-
-      e.preventDefault();
-      const dir = e.deltaY > 0 ? 1 : -1;
-
-      setCurrentPage((p) =>
-        Math.max(0, Math.min(productTypes.length - 1, p + dir))
-      );
-    }; 
-
-    container.addEventListener("wheel", onWheel, { passive: false });
-    return () => container.removeEventListener("wheel", onWheel);
+    const sections = scrollRef.current?.querySelectorAll<HTMLElement>("[data-index]");
+    if (!sections) return;
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) setCurrentPage(Number((entry.target as HTMLElement).dataset.index));
+      }
+    }, { rootMargin: "-80px 0px -60% 0px", threshold: 0 });
+    sections.forEach(section => observer.observe(section));
+    return () => observer.disconnect();
   }, [productTypes.length]);
+
+  const goToSection = (index: number) => {
+    scrollRef.current?.querySelector<HTMLElement>(`[data-index="${index}"]`)?.scrollIntoView({
+      behavior: "smooth", block: "start",
+    });
+    setCurrentPage(index);
+  };
 
   /* ================================
      RENDER
   ================================ */
   return (
-    <div className="h-screen flex width=1200 flex-col bg-gradient-to-b from-orange-50 to-white">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-orange-50 to-white">
 
       <header className="shrink-0 border-b bg-white px-4 py-2">
         <div className="flex items-center justify-center gap-3">
@@ -150,7 +110,7 @@ export default function MenuMain() {
             <p className="text-xs text-gray-600">Quarta a domingo · 18h às 23h</p>
           </div>
         </div>
-        <details className="mx-auto mt-2 max-w-xl text-center text-sm">
+        <details open className="mx-auto mt-2 max-w-xl text-center text-sm">
           <summary className="cursor-pointer font-semibold text-orange-900">Informações e contato</summary>
           <div className="mt-2 space-y-2 rounded-lg bg-orange-50 p-3">
             <p>Rua Bahia, 2310 — Centro</p>
@@ -168,7 +128,7 @@ export default function MenuMain() {
         {productTypes.map((type, index) => (
           <button
             key={type}
-            onClick={() => setCurrentPage(index)}
+            onClick={() => goToSection(index)}
             className={`px-4 py-2 text-xs font-semibold rounded-full whitespace-nowrap transition
               ${currentPage === index
                 ? "bg-black text-white"
@@ -183,19 +143,17 @@ export default function MenuMain() {
       {/* CONTAINER HORIZONTAL */}
       <main
         ref={scrollRef}
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
-        className="flex-1 flex width=1200 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth"
+        className="flex flex-col"
       >
         
         {productTypes.map((type, index) => (
           <section
             key={type}
             data-index={index}
-            className="w-screen flex-shrink-0 snap-start flex flex-col p-3 overflow-hidden"
+            className="w-full scroll-mt-24 border-b border-orange-100 px-3 py-6"
           >
             {/* CONTEÚDO COM SCROLL */}
-            <div className="flex-1 overflow-y-auto overscroll-contain pb-4">
+            <div className="pb-4">
 
               <h2 className="text-center text-4xl font-bold text-orange-900 uppercase tracking-widest mb-4">
                 {type}
@@ -245,18 +203,14 @@ export default function MenuMain() {
               </div>
             </div>
 
-            {/* FOOTER FIXO NA PARTE INFERIOR */}
-            <footer className="h-10 flex items-center justify-center text-xl text-gray-400 uppercase tracking-widest border-t">
-              <ArrowBigLeft className="w-6 m-1 h-6 text-gray-600 hover:translate-x-1 transition" />
-              <span> { index + 1} / {productTypes.length } </span>
-              <ArrowBigRight className="w-6 m-1 h-6 text-gray-600 hover:translate-x-1 transition" />
-            </footer>
+
           </section>
         ))}
       </main>
     </div>
   );
 }
+
 
 
 
