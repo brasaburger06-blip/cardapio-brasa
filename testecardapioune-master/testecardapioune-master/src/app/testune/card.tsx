@@ -28,15 +28,16 @@ export default function CardPrice() {
                     Tabela de preços
                 </CardTitle>
                 <CardDescription className="text-sm text-gray-500">
-                    Pequena — 25 cm — R$ 44,99<br />
+                    Pequena — 25 cm — R$ 55,99<br />
                     4 pedaços • 1 sabor  <br />
-                    Média — 30 cm — R$ 64,99<br />
+                    Média — 30 cm — R$ 69,99<br />
                     8 pedaços • até 2 sabores<br />
-                    Grande — 35 cm — R$ 79,99<br />
+                    Grande — 35 cm — R$ 84,99<br />
                     8 pedaços • até 2 sabores<br />
                 </CardDescription>
             </CardContent>
         </Card>
     );
 }
+
 
