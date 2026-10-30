@@ -627,7 +627,7 @@ export const dataBase = [
     "variations": [
       {
         "category": "PRATO EXECUTIVO",
-        "price": "29,99",
+        "price": "35,99",
         "description": "Arroz, feijão tropeiro, salada de alface e tomate, bife à parmegiana de carne ou frango e batata frita.",
         "status": true
       }
@@ -693,13 +693,7 @@ export const dataBase = [
       {
         "category": "BEBIDAS",
         "price": "15,99",
-        "description": "2 L",
-        "status": true
-      },
-      {
-        "category": "BEBIDAS",
-        "price": "15,99",
-        "description": "2 L ZERO",
+        "description": "2 L — comum ou zero.",
         "status": true
       }
     ]
