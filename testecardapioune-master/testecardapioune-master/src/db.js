@@ -806,25 +806,25 @@ export const dataBase = [
         "category": "DRINKS PRONTOS",
         "description": "GT 269 mL",
         "price": "9,99",
-        "status": true
+        "status": false
       },
       {
         "category": "DRINKS PRONTOS",
         "description": "RED MIX 269 mL",
         "price": "9,99",
-        "status": true
+        "status": false
       },
       {
         "category": "DRINKS PRONTOS",
         "description": "SENSES 269 mL",
         "price": "9,99",
-        "status": true
+        "status": false
       },
       {
         "category": "DRINKS PRONTOS",
         "description": "TROPICAL 269 mL",
         "price": "9,99",
-        "status": true
+        "status": false
       }
     ]
   },
@@ -1301,5 +1301,4 @@ export const dataBase = [
     ]
   }
 ];
-
 
