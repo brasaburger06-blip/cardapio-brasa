@@ -13,23 +13,36 @@ type ProductProps = {
 };
 
 export default function CardMenu2({ product }: ProductProps) {
+  const isPhotoTest = product.id === "lanche-brasa-burguer" && product.categoryTitle === "LANCHES";
+  const imageUrl = isPhotoTest
+    ? "https://images.pexels.com/photos/18136129/pexels-photo-18136129/free-photo-of-close-up-of-burger.jpeg?auto=compress&dpr=1&h=750&w=1260"
+    : product.imageUrlPry;
+
   return (
     <Card className="flex flex-row items-center gap-4 w-full max-w-md m-auto border-r-6 border-gray-800 border-t-0 border-l-0 rounded-r-lg shadow-md p-2 transition-transform hover:scale-105">
       
-     {/* IMAGEM FIXA OU DO ITEM (opcional) */}
-                {product.imageUrlPry && (
-                    <div className="relative w-20 h-20 flex-shrink-0 rounded">
-                        <Image
-                            src={product.imageUrlPry}
-                            alt={product.name}
-                            fill
-                            className="object-cover rounded"
-                        />
-                    </div>
-                )}
+      {imageUrl && (
+        <figure className="w-24 flex-shrink-0">
+          <div className="relative w-24 h-24 overflow-hidden rounded-lg">
+            <Image
+              src={imageUrl}
+              alt={isPhotoTest ? "Hambúrguer — imagem ilustrativa" : product.name}
+              fill
+              sizes="96px"
+              unoptimized={isPhotoTest}
+              className="object-cover rounded-lg"
+            />
+          </div>
+          {isPhotoTest && (
+            <figcaption className="mt-1 text-center text-[10px] leading-tight text-gray-500">
+              Imagem ilustrativa
+            </figcaption>
+          )}
+        </figure>
+      )}
 
       {/* CONTEÚDO */}
-      <CardContent className="flex-1 flex flex-col gap-2 p-1">
+      <CardContent className="min-w-0 flex-1 flex flex-col gap-2 p-1">
         <CardTitle className="text-lg uppercase">
           {product.name}
         </CardTitle>
@@ -75,4 +88,5 @@ export default function CardMenu2({ product }: ProductProps) {
     </Card>
   );
 }
+
 
