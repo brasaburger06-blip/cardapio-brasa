@@ -1148,6 +1148,7 @@ export const dataBase = [
   },
   {
     "id": "drink-daiquiri",
+    "imageUrlPry": "/daiquiri.jpeg",
     "name": "DAIQUIRI",
     "typeMenu": false,
     "categoryTitle": "DRINKS",
