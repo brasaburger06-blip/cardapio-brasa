@@ -1207,6 +1207,21 @@ export const dataBase = [
     ]
   },
   {
+    "id": "drink-gin-tonica",
+    "name": "GIN TÔNICA",
+    "imageUrlPry": "/gin-tonica.jpeg",
+    "typeMenu": false,
+    "categoryTitle": "DRINKS",
+    "variations": [
+      {
+        "category": "Com álcool",
+        "price": "34,99",
+        "description": "Gin e água tônica.",
+        "status": true
+      }
+    ]
+  },
+  {
     "id": "1308",
     "name": "COPÃO DE WHISKY COM ENERGÉTICO",
     "typeMenu": false,
