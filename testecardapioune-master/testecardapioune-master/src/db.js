@@ -1120,7 +1120,8 @@ export const dataBase = [
   },
   {
     "id": "drink-margarita",
-    "name": "MARGARITA",
+    "imageUrlPry": "/blue-margarita.jpeg",
+    "name": "BLUE MARGARITA",
     "typeMenu": false,
     "categoryTitle": "DRINKS",
     "variations": [
