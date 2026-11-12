@@ -1245,7 +1245,7 @@ export const dataBase = [
   },
   {
     "id": "1400",
-    "imageUrlPry": "/torre-terere-faixa.png",
+    "imageUrlPry": "/torres-terere-trio.png",
     "name": "TORRES DE TERERÉ",
     "typeMenu": false,
     "categoryTitle": "TERERÉ",
