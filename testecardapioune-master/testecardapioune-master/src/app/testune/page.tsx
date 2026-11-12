@@ -45,27 +45,7 @@ export default function MenuMain() {
   const productsByType = useMemo(() => {
   const map: Record<string, ProductType[]> = {};
 
-  const salonProducts = dataBase.flatMap((product) => {
-    if (product.id !== "pizza-calabresa") return [product];
-
-    return [
-      { ...product, variations: product.variations.map((variation) => ({
-        ...variation,
-        description: "Muçarela e calabresa.",
-      })) },
-      {
-        ...product,
-        id: "pizza-calabresa-com-cebola",
-        name: "PIZZA DE CALABRESA COM CEBOLA",
-        variations: product.variations.map((variation) => ({
-          ...variation,
-          description: "Muçarela, calabresa e cebola.",
-        })),
-      },
-    ];
-  });
-
-  salonProducts.forEach((p) => {
+  dataBase.forEach((p) => {
     // verifica se existe ao menos uma variação ativa
     const hasActiveVariation = p.variations?.some(v => v.status);
 
@@ -74,6 +54,18 @@ export default function MenuMain() {
     const type = extractProductType(p.categoryTitle);
 
     if (!map[type]) map[type] = [];
+    if (p.id === "pizza-calabresa") {
+      map[type].push(
+        { ...p, variations: p.variations.map(v => ({ ...v, description: "Muçarela e calabresa." })) },
+        {
+          ...p,
+          id: "pizza-calabresa-com-cebola",
+          name: "PIZZA DE CALABRESA COM CEBOLA",
+          variations: p.variations.map(v => ({ ...v, description: "Muçarela, calabresa e cebola." })),
+        },
+      );
+      return;
+    }
     map[type].push(p);
   });
 
