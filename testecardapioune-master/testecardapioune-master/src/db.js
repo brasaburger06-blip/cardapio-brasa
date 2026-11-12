@@ -1201,6 +1201,7 @@ export const dataBase = [
   },
   {
     "id": "drink-negroni",
+    "imageUrlPry": "/negroni.jpeg",
     "name": "NEGRONI",
     "typeMenu": false,
     "categoryTitle": "DRINKS",
