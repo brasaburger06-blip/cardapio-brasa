@@ -45,7 +45,27 @@ export default function MenuMain() {
   const productsByType = useMemo(() => {
   const map: Record<string, ProductType[]> = {};
 
-  dataBase.forEach((p) => {
+  const salonProducts = dataBase.flatMap((product) => {
+    if (product.id !== "pizza-calabresa") return [product];
+
+    return [
+      { ...product, variations: product.variations.map((variation) => ({
+        ...variation,
+        description: "Muçarela e calabresa.",
+      })) },
+      {
+        ...product,
+        id: "pizza-calabresa-com-cebola",
+        name: "PIZZA DE CALABRESA COM CEBOLA",
+        variations: product.variations.map((variation) => ({
+          ...variation,
+          description: "Muçarela, calabresa e cebola.",
+        })),
+      },
+    ];
+  });
+
+  salonProducts.forEach((p) => {
     // verifica se existe ao menos uma variação ativa
     const hasActiveVariation = p.variations?.some(v => v.status);
 
@@ -214,7 +234,9 @@ export default function MenuMain() {
                   <CardMenu2
                     key={product.id}
                     product={product}
-                    illustrativeImage={product.id === "pizza-4-queijos" ? "https://www.primeiramesa.com.br/storage/restaurants/4643/gallery/cfe87d4ea7960b9e489d964d7fc8ec62.webp" : undefined}
+                    illustrativeImage={product.id === "pizza-4-queijos" ? "https://www.primeiramesa.com.br/storage/restaurants/4643/gallery/cfe87d4ea7960b9e489d964d7fc8ec62.webp" : ["pizza-calabresa", "pizza-calabresa-com-cebola"].includes(product.id)
+                      ? "https://compraremcolinas.com/pictures/listing-full/1/25.03.29.20.00-1743289240.1172-3158060.jpg"
+                      : undefined}
                   />
                 ))}
               </div>
