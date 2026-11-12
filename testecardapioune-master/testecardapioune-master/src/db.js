@@ -1119,6 +1119,90 @@ export const dataBase = [
     ]
   },
   {
+    "id": "drink-margarita",
+    "name": "MARGARITA",
+    "typeMenu": false,
+    "categoryTitle": "DRINKS",
+    "variations": [
+      {
+        "category": "",
+        "price": "29,99",
+        "description": "Tequila, licor de laranja Blue Corazón e limão, com borda de sal.",
+        "status": true
+      }
+    ]
+  },
+  {
+    "id": "drink-espanhola",
+    "name": "ESPANHOLA",
+    "typeMenu": false,
+    "categoryTitle": "DRINKS",
+    "variations": [
+      {
+        "category": "",
+        "price": "34,99",
+        "description": "Vinho sobre uma batida cremosa de maracujá com leite condensado.",
+        "status": true
+      }
+    ]
+  },
+  {
+    "id": "drink-daiquiri",
+    "name": "DAIQUIRI",
+    "typeMenu": false,
+    "categoryTitle": "DRINKS",
+    "variations": [
+      {
+        "category": "",
+        "price": "34,99",
+        "description": "Rum, limão, água com gás e xarope de frutas vermelhas, servido em camadas.",
+        "status": true
+      }
+    ]
+  },
+  {
+    "id": "drink-soda-italiana",
+    "name": "SODA ITALIANA",
+    "typeMenu": false,
+    "categoryTitle": "DRINKS",
+    "variations": [
+      {
+        "category": "Sem álcool",
+        "price": "29,99",
+        "description": "Água com gás e xarope de frutas à escolha.",
+        "status": true
+      }
+    ]
+  },
+  {
+    "id": "drink-paloma",
+    "name": "PALOMA",
+    "typeMenu": false,
+    "categoryTitle": "DRINKS",
+    "variations": [
+      {
+        "category": "",
+        "price": "34,99",
+        "description": "Tequila, limão, toranja e água com gás, com borda de sal e uma fatia de laranja.",
+        "status": true
+      }
+    ]
+  },
+  {
+    "id": "drink-negroni",
+    "name": "NEGRONI",
+    "typeMenu": false,
+    "categoryTitle": "DRINKS",
+    "variations": [
+      {
+        "category": "",
+        "price": "37,99",
+        "description": "Gin, vermute e Campari, com casca de laranja.",
+        "status": true
+      }
+    ]
+  },
+  {
     "id": "1308",
     "name": "COPÃO DE WHISKY COM ENERGÉTICO",
     "typeMenu": false,
@@ -1301,4 +1385,3 @@ export const dataBase = [
     ]
   }
 ];
-
