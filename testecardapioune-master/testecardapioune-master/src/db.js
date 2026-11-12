@@ -1079,6 +1079,7 @@ export const dataBase = [
   },
   {
     "id": "1304",
+    "imageUrlPry": "/pina-colada.png",
     "name": "PIÑA COLADA",
     "typeMenu": false,
     "categoryTitle": "DRINKS",
