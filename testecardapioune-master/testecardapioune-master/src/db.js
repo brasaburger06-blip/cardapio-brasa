@@ -1037,6 +1037,7 @@ export const dataBase = [
   },
   {
     "id": "1301",
+    "imageUrlPry": "/cuba-libre.jpeg",
     "name": "CUBA LIBRE",
     "typeMenu": false,
     "categoryTitle": "DRINKS",
