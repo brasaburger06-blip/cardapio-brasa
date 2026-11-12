@@ -1169,6 +1169,7 @@ export const dataBase = [
   },
   {
     "id": "drink-soda-italiana",
+    "imageUrlPry": "/soda-italiana.jpeg",
     "name": "SODA ITALIANA",
     "typeMenu": false,
     "categoryTitle": "DRINKS",
