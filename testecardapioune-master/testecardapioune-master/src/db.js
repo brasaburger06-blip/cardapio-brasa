@@ -1176,6 +1176,7 @@ export const dataBase = [
   },
   {
     "id": "drink-paloma",
+    "imageUrlPry": "/paloma.jpeg",
     "name": "PALOMA",
     "typeMenu": false,
     "categoryTitle": "DRINKS",
