@@ -1022,6 +1022,7 @@ export const dataBase = [
   },
   {
     "id": "1300",
+    "imageUrlPry": "/mojito.jpg",
     "name": "MOJITO",
     "typeMenu": false,
     "categoryTitle": "DRINKS",
