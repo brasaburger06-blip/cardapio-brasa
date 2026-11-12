@@ -211,7 +211,26 @@ export default function MenuMain() {
              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {productsByType[type].map((product) => (
-                  <CardMenu2 key={product.id} product={product} />
+                  product.id === "pizza-4-queijos" ? (
+                    <div key={product.id} className="mx-auto w-full max-w-md">
+                      <figure className="mb-2">
+                        <Image
+                          src="https://www.primeiramesa.com.br/storage/restaurants/4643/gallery/cfe87d4ea7960b9e489d964d7fc8ec62.webp"
+                          alt="Fatia de pizza com queijo derretido"
+                          width={600}
+                          height={450}
+                          unoptimized
+                          className="h-40 w-full rounded-lg object-cover"
+                        />
+                        <figcaption className="mt-1 text-center text-xs text-gray-600">
+                          Imagem ilustrativa
+                        </figcaption>
+                      </figure>
+                      <CardMenu2 product={product} />
+                    </div>
+                  ) : (
+                    <CardMenu2 key={product.id} product={product} />
+                  )
                 ))}
               </div>
             </div>
