@@ -1065,6 +1065,7 @@ export const dataBase = [
   },
   {
     "id": "1303",
+    "imageUrlPry": "/beijo-na-boca.jpeg",
     "name": "BEIJO NA BOCA",
     "typeMenu": false,
     "categoryTitle": "DRINKS",
