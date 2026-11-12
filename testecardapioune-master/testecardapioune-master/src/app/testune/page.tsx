@@ -174,7 +174,7 @@ export default function MenuMain() {
 
               {type === "DRINKS" && (
                 <p className="text-center text-orange-900 mb-4">
-                  Todos os nossos drinks podem ser preparados sem álcool. Peça sua versão!
+                  Temos opções sem álcool. Confira a indicação em cada drink.
                 </p>
               )}
 
@@ -223,9 +223,3 @@ export default function MenuMain() {
     </div>
   );
 }
-
-
-
-
-
-
