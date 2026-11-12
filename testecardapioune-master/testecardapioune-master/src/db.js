@@ -1093,6 +1093,7 @@ export const dataBase = [
   },
   {
     "id": "1306",
+    "imageUrlPry": "/caipirinhas.jpeg",
     "name": "CAIPIRINHAS",
     "typeMenu": false,
     "categoryTitle": "DRINKS",
