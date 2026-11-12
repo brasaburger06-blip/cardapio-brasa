@@ -10,13 +10,15 @@ import {
 
 type ProductProps = {
   product: ProductType;
+  illustrativeImage?: string;
 };
 
-export default function CardMenu2({ product }: ProductProps) {
+export default function CardMenu2({ product, illustrativeImage }: ProductProps) {
   const isPhotoTest = product.id === "lanche-brasa-burguer" && product.categoryTitle === "LANCHES";
   const imageUrl = isPhotoTest
     ? "https://images.pexels.com/photos/18136129/pexels-photo-18136129/free-photo-of-close-up-of-burger.jpeg?auto=compress&dpr=1&h=750&w=1260"
-    : product.imageUrlPry;
+    : illustrativeImage ?? product.imageUrlPry;
+  const isIllustrative = isPhotoTest || Boolean(illustrativeImage);
 
   return (
     <Card className="flex flex-row items-center gap-4 w-full max-w-md m-auto border-r-6 border-gray-800 border-t-0 border-l-0 rounded-r-lg shadow-md p-2 transition-transform hover:scale-105">
@@ -29,11 +31,11 @@ export default function CardMenu2({ product }: ProductProps) {
               alt={isPhotoTest ? "Hambúrguer — imagem ilustrativa" : product.name}
               fill
               sizes="96px"
-              unoptimized={isPhotoTest}
+              unoptimized={isIllustrative}
               className="object-cover rounded-lg"
             />
           </div>
-          {isPhotoTest && (
+          {isIllustrative && (
             <figcaption className="mt-1 text-center text-[10px] leading-tight text-gray-500">
               Imagem ilustrativa
             </figcaption>
@@ -88,5 +90,3 @@ export default function CardMenu2({ product }: ProductProps) {
     </Card>
   );
 }
-
-
