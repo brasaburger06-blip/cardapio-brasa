@@ -1052,6 +1052,7 @@ export const dataBase = [
   },
   {
     "id": "1302",
+    "imageUrlPry": "/moscow-mule.jpeg",
     "name": "MOSCOW MULE",
     "typeMenu": false,
     "categoryTitle": "DRINKS",
